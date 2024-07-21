@@ -47,7 +47,7 @@ public class User {
     private USER_ROLE role;
 
     @JsonIgnore // ทำให้ไม่ถูกนำไปประมวลผลเป็น json
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Order> orders = new ArrayList<>();
 
     // ใช้สำหรัับ mapping ไปหา collection ของ element เช่น list โดยที่ class นั้นไม่ใช่ entity
